@@ -9,11 +9,15 @@ public class Main {
         int  isPresent = 0;
         int isAbsent = 1;
         int workHours;
+        int isPartTime = 8;
 
         int Attendance = (int)((Math.random()*10)%2);
 
         if(Attendance == isPresent) {
             System.out.println("Employee is present");
+            workHours = 8;
+        }else if (Attendance == isPartTime) {
+            System.out.println("Employee is present for part-time");
             workHours = 8;
         } else {
             System.out.println("Employee is absent");
