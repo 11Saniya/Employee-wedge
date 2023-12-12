@@ -1,9 +1,9 @@
-public class Main {
-    public static void main(String[] args) {
+class Employee {
+    private double salaryPerHour = 20;
+    private int totalWorkingDaysInMonth = 20; // Assuming 20 working days in a month
+    private int totalWorkingHoursInMonth = 100; // Assuming 100 working hours in a month
 
-        double salaryPerHour = 20;
-        int totalWorkingDaysInMonth = 20; // Assuming 20 working days in a month
-        int totalWorkingHoursInMonth = 100; // Assuming 100 working hours in a month
+    public void computeEmployeeWage() {
         int totalHoursWorked = 0;
         int totalDaysWorked = 0;
         double monthlyWages = 0;
@@ -42,5 +42,12 @@ public class Main {
         System.out.println("Total days worked: " + totalDaysWorked);
         System.out.println("Total hours worked: " + totalHoursWorked);
         System.out.println("Monthly wage of worker: " + monthlyWages);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee employee = new Employee();
+        employee.computeEmployeeWage();
     }
 }
