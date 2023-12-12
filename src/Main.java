@@ -1,30 +1,31 @@
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
         double salaryPerHour = 20;
-
-        int  isPresent = 0;
-        int isAbsent = 1;
         int workHours;
-        int isPartTime = 8;
 
-        int Attendance = (int)((Math.random()*10)%2);
+        int Attendance = (int)((Math.random() * 10) % 3);
 
-        if(Attendance == isPresent) {
-            System.out.println("Employee is present");
-            workHours = 8;
-        }else if (Attendance == isPartTime) {
-            System.out.println("Employee is present for part-time");
-            workHours = 8;
-        } else {
-            System.out.println("Employee is absent");
-            workHours = 0;
+        switch (Attendance) {
+            case 0:
+                System.out.println("Employee is present");
+                workHours = 8;
+                break;
+            case 1:
+                System.out.println("Employee is absent");
+                workHours = 0;
+                break;
+            case 2:
+                System.out.println("Employee is present for part-time");
+                workHours = 4; // Assuming part-time hours as 4
+                break;
+            default:
+                System.out.println("Invalid attendance status");
+                workHours = 0;
+                break;
         }
-        double dailyWages = salaryPerHour*workHours;
-        System.out.println("daily wage of worker" + dailyWages);
 
+        double dailyWages = salaryPerHour * workHours;
+        System.out.println("Daily wage of worker: " + dailyWages);
     }
 }
